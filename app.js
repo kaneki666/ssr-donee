@@ -37,7 +37,7 @@ app.get("*", function (req, res) {
       "__META_DESCRIPTION__",
       "Sachin Verma's personal site and blog"
     );
-    data = data.replace("__META_DESCRIPTION__", "goal");
+    data = data.replace("__META_OG_DESCRIPTION__", "goal");
     data = data.replace(
       "__META_OG_IMAGE__",
       "https://images.unsplash.com/photo-1625034892070-6a3cc12edb42?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=766&q=80"
