@@ -26,10 +26,12 @@ app.get("/*", (req, res, next) => {
 
     // inject meta tags
     data = data.replace("__META_OG_URL__", post.url);
-    data = data.replace("__META_OG_TITLE__", "tEST Goal 3");
-    data = data.replace("__META_DESCRIPTION__", "Donee goal detail");
+    data = data.replace("__META_OG_TITLE__", "Donee goal detail");
     data = data.replace("__META_OG_DESCRIPTION__", "laptop");
-    data = data.replace("__META_OG_IMAGE__", post.image);
+    data = data.replace(
+      "__META_OG_IMAGE__",
+      "https://donee.s3.amazonaws.com/media/images/goal_compressed_images/photo-1488521787991-ed7bbaae773c.jpg"
+    );
     return res.send(data);
   });
 });
