@@ -9,6 +9,9 @@ const PORT = process.env.PORT || 5000;
 // app.use(cors());
 // app.use(bodyParser.json());
 app.use(express.static(path.resolve(__dirname, "./build")));
+app.use(
+  require("prerender-node").set("prerenderToken", "FOZCAXACsPWxN56ZQzck")
+);
 
 app.get("/*", (req, res, next) => {
   const filePath = path.resolve(__dirname, "./build", "index.html");
