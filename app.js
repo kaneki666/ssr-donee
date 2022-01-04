@@ -26,21 +26,19 @@ const PORT = process.env.PORT || 5000;
 app.use(express.static(path.resolve(__dirname, "./build")));
 
 app.get("*", function (req, res) {
+  console.log(req.body);
   const filePath = path.resolve(__dirname, "./build", "index.html");
   fs.readFile(filePath, "utf8", function (err, data) {
     if (err) {
       return console.log(err);
     }
 
-    data = data.replace("__META_OG_TITLE__", "Sachin Verma");
-    data = data.replace(
-      "__META_DESCRIPTION__",
-      "Sachin Verma's personal site and blog"
-    );
-    data = data.replace("__META_OG_DESCRIPTION__", "goal");
+    data = data.replace("__META_OG_TITLE__", "tEST Goal 3");
+    data = data.replace("__META_DESCRIPTION__", "Donee goal detail");
+    data = data.replace("__META_OG_DESCRIPTION__", "laptop");
     data = data.replace(
       "__META_OG_IMAGE__",
-      "https://images.unsplash.com/photo-1625034892070-6a3cc12edb42?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=766&q=80"
+      "https://donee.s3.amazonaws.com/media/images/goal_images/photo-1488521787991-ed7bbaae773c_e4nGOZ5.jpeg"
     );
     res.send(data);
   });
