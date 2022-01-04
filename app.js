@@ -3,7 +3,7 @@ const path = require("path");
 const fs = require("fs");
 
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 5000;
 
 // app.get("/", function (req, res) {
 //   const filePath = path.resolve(__dirname, "./public", "index.html");
@@ -53,4 +53,4 @@ app.get("*", function (req, res) {
 <meta name="og:image" content="__META_OG_IMAGE__"/> */
 }
 
-app.listen(port, () => console.log(`Listening on port ${port}`));
+app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
